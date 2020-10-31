@@ -47,6 +47,7 @@ def draw():
         print(f'{i_} ', end='')
     print(f'\tsum:', sum_p)
 
+
 # =============================== #
 # свой код с блекджеком и.. Кхем  #
 #           правила:              #
@@ -106,8 +107,6 @@ while not GameOver:
     #     bet = int(bet)
     # money -= bet
 
-
-
     print(f'денег: {money}')
     bet = input('ваша ставка:\n')
     while 1:
@@ -124,6 +123,8 @@ while not GameOver:
                     bet = input('ваша ставка:\n')
                 else:
                     continue
+            else:
+                break
         else:
             while not (bet.isdigit() or bet == 'a'):
                 print('некорректный ввод')
@@ -158,7 +159,7 @@ while not GameOver:
         sum_p = sum_cards(player)
         draw()
         if sum_p > 21:
-            print('у вас перебор')
+            # print('у вас перебор')
             break
         inp = input()
 
@@ -170,7 +171,7 @@ while not GameOver:
             new_card(dealer)
             sum_d = sum_cards(dealer)
             if sum_d > 21:
-                print('у диллера перебор')
+                # print('у диллера перебор')
                 break
         draw()
 
